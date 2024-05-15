@@ -1,0 +1,182 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*esse comando tendo o asterisco solo, diz que estou anulando a margem e padding padrao que a pagina web ja vem configurada, asism consigo preencher a caixa em questao da minha maneira */
+}
+
+:root {
+  --text-color: white;
+  /*tudo q usar essa variavel, vai usar branco no lugar 
+  VAR{} É A FUNÇAO QUE SE DEVE USAR ONDE  ACOR A SER SUBSTITUIDA ESTA*/
+  --bg-url: url(/assets/bg-mobile.jpg);
+  --stroke-color: rgb(255, 255, 255);
+  --surface-color: #91a7b694;
+  --surface-color-hover: rgba(255, 255, 255, 0.322);
+  --highlight-color: white;
+  --switch-bg-url: url(/assets/moon-stars.svg);
+}
+.light {
+  --text-color: black;
+  --bg-url: url(/assets/bg-mobile-light.jpg);
+  --stroke-color: black;
+  --surface-color: rgba(0, 0, 0, 0.192);
+  --highlight-color: rgba(0, 0, 0, 0.192);
+  --switch-bg-url: url(/assets/sun.svg);
+}
+body {
+  /*
+ background-image: url(/assets/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover; */
+
+  /* AQUI TEMOS O CÓDIGO DA PAGINA POR EXTENSO
+  ABAIXO VAMOS FAZER O SHOTCURT DESSE CÓD.
+  seguindo de forma mais direta todo o processo: 
+  background: color image repeat position/size */
+
+  background: var(--bg-url) no-repeat top center/cover;
+}
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+
+  /*aqui exemplo de aplicação do var*/
+}
+#caixa0 {
+  width: 360px;
+
+  /*posso alinhar a caixa usando margin-left:auto ou margin-rigth: auto 
+  ou usando shotcurt margin:auto mas esse short, não alinha tops nem footspace. */
+  /*modo longo aqui---
+  margin-top: 56px;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-left: auto;  */
+  margin: 56px auto 0px auto;
+  padding: 0 24px;
+}
+
+#profile img {
+  width: 112px;
+}
+#profile p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+#msc {
+  text-align: center;
+  padding: 24px;
+}
+
+/*SWITCH AQUI BOTAO NOTURNO*/
+#switch {
+  position: relative;
+  width: 64px;
+  /*aqui crio uma margem e uma relaçao para alinhar o botao */
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+  /*por padrao, o css, um elemento vai ficar abaixo do outro( sendo eles do display blocks, para sobrepor elementos, precisamos pensar na teoria do predio, e que olhamos esses andares (layers ou camadas).
+
+  QUANDO UM ESTA EM CIMA DO OUTRO PENSE QUE  VC OLHA O PREDIO D ECIMA, ASSIM, PRECISAMOS ENTAO, COLOCAR O FUNDO NO ANDAR 0
+  E O BOTAO NO ANDAR 1, ENTENDE? 
+  
+  ASSIM FAÇO O POSITION ABSOLUTE, IMEDIATAMENTE OS ELEMENTOS VAO SE SOBREPOR NA CAMADA
+  O POSITION ABSOLUTE DA INDEPENDENCIA PARA O ELEMENTO IR PRA QUALQUER LUGAR NA PAGINA
+  
+  E MUDO O "ANDAR DELE COM O Z INDEX*/
+}
+
+/*PRA FAZER A AUTOMATIZAÇÃO DO BOTAO TENHO QUE USAR O JAVASCRIPT */
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+#switch span {
+  /*spam tem display INLINE, logo nao aceita algumas propriedades, largura é um exemplo. para corrigir faremos o  display block*/
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+
+  /* o dosplay flex faz com que todos os elementos
+  fiquem encaixados todos,  GAP - VAI TRAZER UMA FRESTINHA ENTRE OS ELEMETOS DA NOSSA UL*/
+}
+ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* O ULTIMO AQUI JUST. CONTENT ALINHA OS ELEMENTOS DA LINHA POREM NAO CENTRALIZA NA CAIXA, ELE  */
+  padding: 16px 24px;
+
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  /*border radius é p arredondar pontas*/
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  text-decoration: none;
+  font-weight: 800;
+
+  transition: background 0.3s;
+  /*transition é p essa transiçao do mouse passando por cima da caixa com link ficar mais suave*/
+}
+/* pseudo selector faz a caixa ter um comprtamento diferente quando o mouse passa por cima, temos ela abaixo */
+ul li a:hover {
+  background-color: var(--surface-color);
+  border: 1.5px var(--text-color);
+}
+
+#social-links {
+  display: flex;
+  justify-content: center;
+
+  padding: 16px 0;
+  font-size: 24px;
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: 0.5s;
+  border-radius: 50%;
+}
+#social-links a:hover {
+  background: var(--highlight-color);
+}
+
+footer {
+  padding: 24px;
+  text-align: center;
+}
