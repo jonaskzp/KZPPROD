@@ -45,8 +45,8 @@ body * {
   /*aqui exemplo de aplicação do var*/
 }
 #caixa0 {
-  width: 360px;
-
+  width: 100%;
+  max-width: 588px;
   /*posso alinhar a caixa usando margin-left:auto ou margin-rigth: auto 
   ou usando shotcurt margin:auto mas esse short, não alinha tops nem footspace. */
   /*modo longo aqui---
