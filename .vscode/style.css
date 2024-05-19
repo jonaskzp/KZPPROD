@@ -13,7 +13,7 @@
   --stroke-color: rgb(255, 255, 255);
   --surface-color: #91a7b694;
   --surface-color-hover: rgba(255, 255, 255, 0.322);
-  --highlight-color: white;
+  --highlight-color: rgba(255, 255, 255, 0.199);
   --switch-bg-url: url(/assets/moon-stars.svg);
 }
 .light {
@@ -93,6 +93,8 @@ body * {
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+
+  animation: slide-end 0.3s;
   /*por padrao, o css, um elemento vai ficar abaixo do outro( sendo eles do display blocks, para sobrepor elementos, precisamos pensar na teoria do predio, e que olhamos esses andares (layers ou camadas).
 
   QUANDO UM ESTA EM CIMA DO OUTRO PENSE QUE  VC OLHA O PREDIO D ECIMA, ASSIM, PRECISAMOS ENTAO, COLOCAR O FUNDO NO ANDAR 0
@@ -106,9 +108,12 @@ body * {
 
 /*PRA FAZER A AUTOMATIZAÇÃO DO BOTAO TENHO QUE USAR O JAVASCRIPT */
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.4s forwards; /*a regra aqui define o tempo de transiçao o forwars define que a animação nao precisa voltar ao inicio apos os .4s */
 }
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
+}
+
 #switch span {
   /*spam tem display INLINE, logo nao aceita algumas propriedades, largura é um exemplo. para corrigir faremos o  display block*/
   display: block;
@@ -192,5 +197,24 @@ seemrpe  um @ é um atrule*/
 
   .light {
     --bg-url: url(/assets/bg-desktop-light.jpg);
+  }
+}
+
+/*criando animação leve para botao de ligth*/
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+@keyframes slide-end {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
