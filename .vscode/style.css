@@ -185,7 +185,12 @@ footer {
 
 /*media queries
 seemrpe  um @ é um atrule*/
-@media (min-width: 700px){
-  :root  {   --bg-url: url(/assets/bg-desktop.jpg);}
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(/assets/bg-desktop.jpg);
+  }
 
-.light {--bg-url: url(/assets/bg-desktop-light.jpg); }
+  .light {
+    --bg-url: url(/assets/bg-desktop-light.jpg);
+  }
+}
