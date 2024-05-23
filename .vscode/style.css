@@ -61,7 +61,7 @@ body * {
 
 #profile img {
   width: 112px;
-  margin-left: 60px;
+  align-self: auto;
 }
 #profile p {
   font-weight: 500;
@@ -71,6 +71,7 @@ body * {
 }
 #msc {
   text-align: center;
+  font-weight: bold;
   padding: 24px;
 }
 

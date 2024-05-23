@@ -8,9 +8,9 @@ function toggleMode() {
   //SUBSTITUA A IMAGEM
   if (html.classList.contains("light")) {
     //SE TIVER LIGTH MODE
-    img.setAttribute("src", "/assets/avatar.png ")
+    img.setAttribute("src", "/kzp/noite.png ")
   } else {
-    img.setAttribute("src", "/assets/avatar-light.png")
+    img.setAttribute("src", "/kzp/dia.png")
   }
 }
 
