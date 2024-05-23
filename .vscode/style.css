@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /*box-sizing: border-box;
   /*esse comando tendo o asterisco solo, diz que estou anulando a margem e padding padrao que a pagina web ja vem configurada, asism consigo preencher a caixa em questao da minha maneira */
 }
 
@@ -37,7 +37,7 @@ body {
   background: color image repeat position/size */
 
   background: var(--bg-url) no-repeat top center/cover;
-  height: 100vh;
+  /* height: 100vh;*/
 }
 body * {
   font-family: "Inter", sans-serif;
@@ -61,6 +61,7 @@ body * {
 
 #profile img {
   width: 112px;
+  margin-left: 60px;
 }
 #profile p {
   font-weight: 500;
