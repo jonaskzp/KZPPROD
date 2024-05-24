@@ -4,7 +4,7 @@
   /*box-sizing: border-box;
   /*esse comando tendo o asterisco solo, diz que estou anulando a margem e padding padrao que a pagina web ja vem configurada, asism consigo preencher a caixa em questao da minha maneira */
 }
-
+/* em algum momento descentralizei a imagem de perfil e não consegui voltar no lugar, precisava de auxilio*/
 :root {
   --text-color: white;
   /*tudo q usar essa variavel, vai usar branco no lugar 
@@ -37,7 +37,7 @@ body {
   background: color image repeat position/size */
 
   background: var(--bg-url) no-repeat top center/cover;
-  /* height: 100vh;*/
+  height: 100vh;
 }
 body * {
   font-family: "Inter", sans-serif;
@@ -61,7 +61,6 @@ body * {
 
 #profile img {
   width: 112px;
-  align-self: auto;
 }
 #profile p {
   font-weight: 500;
@@ -96,7 +95,7 @@ body * {
   z-index: 1;
   transform: translateY(-50%);
 
-  animation: slide-end 0.3s;
+  animation: slide-end 0.5s;
   /*por padrao, o css, um elemento vai ficar abaixo do outro( sendo eles do display blocks, para sobrepor elementos, precisamos pensar na teoria do predio, e que olhamos esses andares (layers ou camadas).
 
   QUANDO UM ESTA EM CIMA DO OUTRO PENSE QUE  VC OLHA O PREDIO D ECIMA, ASSIM, PRECISAMOS ENTAO, COLOCAR O FUNDO NO ANDAR 0
